@@ -9,7 +9,7 @@ metadata:
     kubernetes.io/ingress.class: "contour"
 spec:
   rules:
-  - host: portal.demo.mydomain.com
+  - host: portal.saltlabs.tech
     http:
       paths:
       - path: /

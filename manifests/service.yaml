@@ -6,10 +6,10 @@ metadata:
   name: portal-service
   namespace: portal
 spec:
+  type: ClusterIP
   selector:
     app: portal
   ports:
     - protocol: TCP
       port: 80
       targetPort: 80
-  type: ClusterIP

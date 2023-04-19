@@ -32,7 +32,12 @@ spec:
               valueFrom:
                 configMapKeyRef:
                   name: portal
-                  key: src
+                  key: repo
+            - name: GIT_BRANCH
+              valueFrom:
+                configMapKeyRef:
+                  name: portal
+                  key: branch
           volumeMounts:
             - name: portal-workdir
               mountPath: /workdir

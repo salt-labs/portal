@@ -6,7 +6,7 @@ metadata:
   name: portal-update
   namespace: portal
 spec:
-  schedule: "*/5 * * * *"
+  schedule: "*/15 * * * *"
   concurrencyPolicy: Forbid
   #backoffLimit: 0
   jobTemplate:
@@ -28,7 +28,12 @@ spec:
                   valueFrom:
                     configMapKeyRef:
                       name: portal
-                      key: src
+                      key: repo
+                - name: GIT_BRANCH
+                  valueFrom:
+                    configMapKeyRef:
+                      name: portal
+                      key: branch
               volumeMounts:
                 - name: portal-workdir
                   mountPath: /workdir
