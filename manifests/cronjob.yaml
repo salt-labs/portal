@@ -1,0 +1,50 @@
+---
+
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: portal-update
+  namespace: portal
+spec:
+  schedule: "*/5 * * * *"
+  concurrencyPolicy: Forbid
+  #backoffLimit: 0
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          restartPolicy: Never
+          containers:
+            - name: hugo
+              image: ghcr.io/salt-labs/containers/hugo:latest
+              imagePullPolicy: Always
+              env:
+                - name: LOGLEVEL
+                  valueFrom:
+                    configMapKeyRef:
+                      name: portal
+                      key: loglevel
+                - name: GIT_REPO
+                  valueFrom:
+                    configMapKeyRef:
+                      name: portal
+                      key: src
+              volumeMounts:
+                - name: portal-workdir
+                  mountPath: /workdir
+                - name: portal-public
+                  mountPath: /public
+              resources:
+                limits:
+                  cpu: 1000m
+                  memory: 1024Mi
+                requests:
+                  cpu: 250m
+                  memory: 256Mi
+          volumes:
+            - name: portal-workdir
+              persistentVolumeClaim:
+                claimName: portal-workdir
+            - name: portal-public
+              persistentVolumeClaim:
+                claimName: portal-public

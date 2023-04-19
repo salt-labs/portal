@@ -1,0 +1,45 @@
+ignoreFiles:
+  - content/portfolio/\.*
+  - content/product/\.*
+  - content/sketch/\.*
+  - content/homepage/\.*
+  - content/post/\.*
+  - content/\.*
+baseURL: 'https://portal.saltlabs.tech/'
+languageCode: en-US
+title: Portal
+theme: startpage
+copyright: Salt Labs
+enableRobotsTXT: true
+pygmentsCodeFences: true
+canonifyurls: true
+paginate: 5
+sitemap:
+  changefreq: weekly
+  priority: 0.5
+permalinks:
+  posts: '/:year/:month/:slug/'
+  post: '/:year/:month/:slug/'
+  pages: '/:slug/'
+  page: '/:slug/'
+Author:
+  name: Salt Labs
+params:
+  description: Portal
+  startPageColumns: true
+  welcomeText: Portal
+  searchEngines:
+    - name: Google
+      activated: true
+      url: 'https://www.google.com/search'
+    - name: DuckDuckGo
+      activated: true
+      url: 'https://duckduckgo.com/'
+    - name: Bing
+      activated: true
+      url: 'https://www.bing.com/search'
+    - name: Baidu
+      activated: true
+      url: 'https://baidu.com/s'
+      searchkey: wd
+taxonomies: {}

@@ -1,0 +1,19 @@
+---
+
+- group: Internet
+  items:
+    - title: VMware
+      url: https://www.vmware.com
+      icon: fab fa-vmware
+
+- group: Salt Labs
+  items:
+    - title: Home
+      url: https://www.saltlabs.tech
+      icon: fab fa-salt
+    - title: Docs
+      url: https://docs.saltlabs.tech
+      icon: fab fa-salt
+    - title: Presentations
+      url: https://presentations.saltlabs.tech
+      icon: fab fa-salt
