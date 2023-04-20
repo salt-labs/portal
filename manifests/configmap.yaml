@@ -10,7 +10,7 @@ data:
   loglevel: "info"
 
   # Define the git repo that is used to build the portal site.
-  repo: "https://github.com/salt-labs/trash-can.git"
+  repo: "https://github.com/salt-labs/portal.git"
   branch: "trunk"
 
   # The caddy configuration file.

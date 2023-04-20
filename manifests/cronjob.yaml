@@ -6,7 +6,7 @@ metadata:
   name: portal-update
   namespace: portal
 spec:
-  schedule: "*/15 * * * *"
+  schedule: "*/5 * * * *"
   concurrencyPolicy: Forbid
   #backoffLimit: 0
   jobTemplate:
