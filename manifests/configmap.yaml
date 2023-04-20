@@ -15,10 +15,13 @@ data:
 
   # The caddy configuration file.
   caddyfile: |
-    localhost
-
-    root * /public
-
-    log {
-      output stdout
+    :80 {
+      root * /public
+      encode gzip
+      try_files {path} /index.html
+      file_server
+      log {
+        output stdout
+        format console
+      }
     }
