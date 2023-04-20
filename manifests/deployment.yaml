@@ -1,5 +1,7 @@
 ---
 
+# kubectl debug -it $POD_NAME --image=busybox --target=caddy --namespace=portal
+
 apiVersion: apps/v1
 kind: Deployment
 metadata:
