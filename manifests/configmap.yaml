@@ -7,7 +7,7 @@ metadata:
   namespace: portal
 data:
   # The log level. Possible values are: "debug", "info", "warn", "error".
-  loglevel: "info"
+  loglevel: "debug"
 
   # Define the git repo that is used to build the portal site.
   repo: "https://github.com/salt-labs/portal.git"
@@ -15,15 +15,10 @@ data:
 
   # The caddy configuration file.
   caddyfile: |
-    :80 {
-      root /public
-      file_server
-      log {
-        output file /var/log/caddy/access.log
-      }
-      errors {
-        log {
-          output file /var/log/caddy/error.log
-        }
-      }
+    localhost
+
+    root * /public
+
+    log {
+      output stdout
     }
